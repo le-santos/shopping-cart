@@ -7,6 +7,7 @@ function App() {
       <Layout>
         <ProductCard />
         <ProductCard />
+        <ProductCard />
       </Layout>
     </div>
   );

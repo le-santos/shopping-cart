@@ -6,6 +6,7 @@ const DivStyled = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  margin: 1.2rem 0;
 `;
 
 export default function ProductCard() {

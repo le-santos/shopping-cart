@@ -1,12 +1,15 @@
 import styled from "styled-components";
 
 const ImgStyled = styled.img`
-  width: 200px;
+  width: 100%;
+  max-width: 9rem;
   height: auto;
+  margin: 0 1.2rem;
+  background-color: #fff;
   border: 1px solid gray;
-  box-shadow: 2px 2px 2px;
+  border-radius: 4px;
 `;
 
 export default function ProductImage({ src, alt }) {
-  return <ImgStyled width="200" height="auto" alt={alt} src={src} />;
+  return <ImgStyled alt={alt} src={src} />;
 }
