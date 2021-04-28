@@ -9,18 +9,11 @@ const DivStyled = styled.div`
   margin: 1.2rem 0;
 `;
 
-export default function ProductCard() {
+export default function ProductCard({ alt, src, title, price, discountPrice }) {
   return (
     <DivStyled>
-      <ProductImage
-        alt="product"
-        src="http://codeby.vteximg.com.br/arquivos/ids/159959-800-1029/truffon-meio-amargo.png?v=636930938547630000"
-      />
-      <ProductInfo
-        title="Título do Produto"
-        price="1,25"
-        discountPrice="1,10"
-      />
+      <ProductImage alt={alt} src={src} />
+      <ProductInfo title={title} price={price} discountPrice={discountPrice} />
     </DivStyled>
   );
 }
