@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import ProductCard from "./ProductCard/ProductCard";
+import FormatCurrency from "../../utils/currency";
 
 const DivStyled = styled.div`
   display: flex;
@@ -11,8 +12,8 @@ export default function ProductList({ list }) {
     <ProductCard
       key={item.uniqueId}
       title={item.name}
-      price={item.price}
-      discountPrice={item.sellingPrice}
+      price={FormatCurrency(item.price)}
+      discountPrice={FormatCurrency(item.sellingPrice)}
       alt={item.name}
       src={item.imageUrl}
     />

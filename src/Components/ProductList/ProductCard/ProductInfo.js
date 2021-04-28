@@ -20,8 +20,8 @@ export default function ProductInfo({ title, price, discountPrice }) {
   return (
     <DivStyled>
       <h3>{title}</h3>
-      <p>{`R$ ${price}`}</p>
-      <h3>{`R$ ${discountPrice}`}</h3>
+      <p>{price}</p>
+      <h3>{discountPrice}</h3>
     </DivStyled>
   );
 }
