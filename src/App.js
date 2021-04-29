@@ -7,13 +7,13 @@ import { useEffect, useState } from "react";
 import CartControl from "./Components/CartControl/CartControl";
 
 function App() {
-  const [products, setproducts] = useState([]);
+  const [products, setProducts] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
   const [cart, setCart] = useState(0);
 
   useEffect(() => {
     const [itemsHigh, itemsLow] = getProducts();
-    cart === 0 ? setproducts([...itemsHigh]) : setproducts([...itemsLow]);
+    cart === 0 ? setProducts([...itemsHigh]) : setProducts([...itemsLow]);
   }, [cart]);
 
   useEffect(() => {
@@ -28,9 +28,14 @@ function App() {
     cart === 0 ? setCart(1) : setCart(0);
   };
 
+  const cleanCart = () => {
+    setProducts([]);
+  };
+
   return (
     <Layout className="App">
       <CartControl onClick={toggleCart} />
+      <button onClick={cleanCart}>Limpar carrinho</button>
       <ProductList list={products} />
       <TotalBox total={totalPrice} />
       <CheckoutBox />
