@@ -27,7 +27,7 @@ const DivStyled = styled.div`
 export default function CartControl({ onClick }) {
   return (
     <DivStyled>
-      <button onClick={onClick}>Troca items</button>
+      <button onClick={onClick}>Troca itens</button>
     </DivStyled>
   );
 }

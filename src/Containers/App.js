@@ -13,6 +13,10 @@ function App() {
   const [cart, setCart] = useState(0);
 
   useEffect(() => {
+    // Para uso de API externa:
+    // const items = getProducts();
+    // setProducts([...items])
+
     const [itemsHigh, itemsLow] = getProducts();
     cart === 0 ? setProducts([...itemsHigh]) : setProducts([...itemsLow]);
   }, [cart]);
