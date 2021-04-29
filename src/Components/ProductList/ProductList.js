@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import ProductCard from "./ProductCard/ProductCard";
 import FormatCurrency from "../../utils/currency";
+import EmptyCart from "./EmptyCart";
 
 const DivStyled = styled.div`
   display: flex;
@@ -8,16 +9,20 @@ const DivStyled = styled.div`
 `;
 
 export default function ProductList({ list }) {
-  const cartList = list.map((item) => (
-    <ProductCard
-      key={item.uniqueId}
-      title={item.name}
-      price={FormatCurrency(item.price)}
-      discountPrice={FormatCurrency(item.sellingPrice)}
-      alt={item.name}
-      src={item.imageUrl}
-    />
-  ));
-
+  const cartList =
+    list.length > 0 ? (
+      list.map((item) => (
+        <ProductCard
+          key={item.uniqueId}
+          title={item.name}
+          price={FormatCurrency(item.price)}
+          discountPrice={FormatCurrency(item.sellingPrice)}
+          alt={item.name}
+          src={item.imageUrl}
+        />
+      ))
+    ) : (
+      <EmptyCart />
+    );
   return <DivStyled>{cartList}</DivStyled>;
 }
