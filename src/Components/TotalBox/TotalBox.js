@@ -9,6 +9,14 @@ const DivStyled = styled.div`
   border-bottom: 1px solid var(--gray-1);
   border-top: 1px solid var(--gray-1);
   padding: 1rem 0;
+
+  @media (min-width: 720px) {
+    padding: 1rem 10%;
+  }
+
+  @media (min-width: 1080px) {
+    padding: 1rem 20%;
+  }
 `;
 
 export default function TotalBox({ total }) {

@@ -1,11 +1,11 @@
-import Layout from "./Components/Layout/Layout";
-import TotalBox from "./Components/TotalBox/TotalBox";
-import CheckoutBox from "./Components/CheckoutBox/CheckoutBox";
-import ProductList from "./Components/ProductList/ProductList";
-import getProducts from "./services/getProducts";
+import Layout from "../Components/Layout/Layout";
+import TotalBox from "../Components/TotalBox/TotalBox";
+import CheckoutBox from "../Components/CheckoutBox/CheckoutBox";
+import ProductList from "../Components/ProductList/ProductList";
+import getProducts from "../services/getProducts";
 import { useEffect, useState } from "react";
-import CartControl from "./Components/CartControl/CartControl";
-import CleanCartButton from "./Components/CleanCartButton/CleanCartButton";
+import CartControl from "../Components/CartControl/CartControl";
+import CleanCartButton from "../Components/CleanCartButton/CleanCartButton";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -36,8 +36,9 @@ function App() {
   return (
     <Layout className="App">
       <CartControl onClick={toggleCart} />
-      <ProductList list={products} />
-      <CleanCartButton onClick={cleanCart} />
+      <ProductList list={products}>
+        <CleanCartButton onClick={cleanCart} />
+      </ProductList>
       <TotalBox total={totalPrice} />
       <CheckoutBox />
     </Layout>
