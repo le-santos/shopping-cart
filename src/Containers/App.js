@@ -14,8 +14,10 @@ function App() {
 
   useEffect(() => {
     // Para uso de API externa:
-    // const items = getProducts();
-    // setProducts([...items])
+    // (async function () {
+    //   const items = await getProducts();
+    //   setProducts([...items]);
+    // })();
 
     const [itemsHigh, itemsLow] = getProducts();
     cart === 0 ? setProducts([...itemsHigh]) : setProducts([...itemsLow]);
