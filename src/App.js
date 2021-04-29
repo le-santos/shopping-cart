@@ -4,15 +4,17 @@ import CheckoutBox from "./Components/CheckoutBox/CheckoutBox";
 import ProductList from "./Components/ProductList/ProductList";
 import getProducts from "./services/getProducts";
 import { useEffect, useState } from "react";
+import CartControl from "./Components/CartControl/CartControl";
 
 function App() {
   const [products, setproducts] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
+  const [cart, setCart] = useState(0);
 
   useEffect(() => {
-    const items = getProducts();
-    setproducts([...items]);
-  }, []);
+    const [itemsHigh, itemsLow] = getProducts();
+    cart === 0 ? setproducts([...itemsHigh]) : setproducts([...itemsLow]);
+  }, [cart]);
 
   useEffect(() => {
     const sum = products.reduce(
@@ -22,8 +24,13 @@ function App() {
     setTotalPrice(sum);
   }, [products]);
 
+  const toggleCart = () => {
+    cart === 0 ? setCart(1) : setCart(0);
+  };
+
   return (
     <Layout className="App">
+      <CartControl onClick={toggleCart} />
       <ProductList list={products} />
       <TotalBox total={totalPrice} />
       <CheckoutBox />
