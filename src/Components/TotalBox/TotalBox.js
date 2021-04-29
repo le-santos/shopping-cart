@@ -15,7 +15,7 @@ export default function TotalBox({ total }) {
   return (
     <DivStyled>
       <FinalPrice total={total} />
-      <FreeShipping />
+      {total > 1000 && <FreeShipping />}
     </DivStyled>
   );
 }
