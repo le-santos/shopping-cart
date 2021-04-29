@@ -7,16 +7,25 @@ import { useEffect, useState } from "react";
 
 function App() {
   const [products, setproducts] = useState([]);
+  const [totalPrice, setTotalPrice] = useState(0);
 
   useEffect(() => {
     const items = getProducts();
     setproducts([...items]);
   }, []);
 
+  useEffect(() => {
+    const sum = products.reduce(
+      (acc, item) => acc + item.sellingPrice * item.quantity,
+      0
+    );
+    setTotalPrice(sum);
+  }, [products]);
+
   return (
     <Layout className="App">
       <ProductList list={products} />
-      <TotalBox total={"9,21"} />
+      <TotalBox total={totalPrice} />
       <CheckoutBox />
     </Layout>
   );

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import FormatCurrency from "../../utils/currency";
 
 const DivStyled = styled.div`
   display: flex;
@@ -10,7 +11,7 @@ export default function FinalPrice({ total }) {
   return (
     <DivStyled>
       <h2>Total</h2>
-      <h2>{`R$ ${total}`}</h2>
+      <h2>{FormatCurrency(total)}</h2>
     </DivStyled>
   );
 }
