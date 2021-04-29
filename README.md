@@ -1,70 +1,70 @@
-# Getting Started with Create React App
+# Shopping-Cart
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Essa aplicação é um modelo de carrinho de compras para e-commerces.
 
-## Available Scripts
+É possível acessá-la em [https://shopping-cart-mocha-beta.vercel.app/](https://shopping-cart-mocha-beta.vercel.app/)
 
-In the project directory, you can run:
+## Dependências
 
-### `yarn start`
+Criado com:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- [ReactJS](https://reactjs.org/)
+- [Styled-Components](https://styled-components.com/)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `yarn test`
+## Como funciona?
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Os dados de um carrinho de compras são renderizados na tela via chamada de uma API.
+- O preço final é calculado de acordo com os preços dos produtos e quantidades presentes no carrinho.
+- Caso o preço seja maior do que um valor (R$ 10,00 nesse caso) é renderizado uma aviso de frete grátis.
+- É possível limpar o carrinho de compras completamente.
 
-### `yarn build`
+## Testando a aplicação
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Para fins de teste, há dois arquivos `.json` em `src/assests/json` com dados simulando diferentes respostas de api. 
+O botão **Troca itens** (*adicionado apenas para fins de teste*) permite alternar entre essas duas respostas.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+O botão **Limpar carrinho** remove os items do carrinho. 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
+## Instalação
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Requisitos: 
+- [Node.js](https://nodejs.org/en/download/) ou
+- [Yarn](https://yarnpkg.com/) 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Para instalar na sua máquina, clone o repositório do projeto:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```bash
+git clone https://github.com/le-santos/shopping-cart.git
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```
 
-## Learn More
+Acesse o diretório do projeto com: 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+cd shopping-cart.git
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Instale as dependências do projeto usando `yarn` ou `npm` :
 
-### Code Splitting
+```
+yarn install
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+# ou
 
-### Analyzing the Bundle Size
+npm install
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+No diretório do projeto podes rodar a aplicação com:
 
-### Making a Progressive Web App
+```
+yarn start
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+# ou
 
-### Advanced Configuration
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Abra no browser [http://localhost:3000](http://localhost:3000) para acessar a aplicação.
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
